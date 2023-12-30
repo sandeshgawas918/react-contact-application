@@ -41,10 +41,10 @@ const App = () => {
 
       <div className="container">
         <div className="row">
-          <div className="col-md-6 z-0">
+          <div className="col-md-6">
             <Search setSearch={setSearch} searchContact={searchContact}/>
           </div>
-          <div className="col-md-6 z-1">
+          <div className="col-md-6">
             <AddContact Contact={Contact} setContact={setContact}  />
           </div>
         </div>
