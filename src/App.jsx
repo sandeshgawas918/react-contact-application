@@ -29,7 +29,7 @@ const App = () => {
 
 
   return (
-    <div className=''>
+    <div className=' z-0'>
     {/* <pre>{JSON.stringify(search)}</pre> */}
       <nav className='bg-black text-white p-4'>
         <h4><span className='text-primary'><FaReact className=' mb-1' /> React</span> - Contact Application</h4>
@@ -41,10 +41,10 @@ const App = () => {
 
       <div className="container">
         <div className="row">
-          <div className="col-md-7">
+          <div className="col-md-6 z-0">
             <Search setSearch={setSearch} searchContact={searchContact}/>
           </div>
-          <div className="col-md-5">
+          <div className="col-md-6 z-1">
             <AddContact Contact={Contact} setContact={setContact}  />
           </div>
         </div>
