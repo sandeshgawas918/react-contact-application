@@ -3,7 +3,7 @@ import { MdDelete } from "react-icons/md";
 import { FaEye } from "react-icons/fa";
 import { FaEdit } from "react-icons/fa";
 
-const DisplayCard = ({ search, Contact, setContact }) => {
+const DisplayCard = ({ search, Contact, setContact,sort,order }) => {
 
     const deleteContact = (myId) => {
         let newArray = Contact.filter((contact) => {
@@ -16,7 +16,9 @@ const DisplayCard = ({ search, Contact, setContact }) => {
         return contact.name.toLowerCase().includes(search.toLowerCase()) ||
             contact.email.toLowerCase().includes(search.toLowerCase()) ||
             contact.mobile.toString().includes(search.toString())
-    })
+    }).sort((a,b)=>(
+        order=='asc' ? a[sort].localeCompare(b[sort]) : b[sort].localeCompare(a[sort])
+    ))
 
     console.log(filteredArray);
 
