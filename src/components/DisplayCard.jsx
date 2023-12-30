@@ -42,7 +42,7 @@ const DisplayCard = ({ search, Contact, setContact,sort,order }) => {
                                             </ul>
                                         </div>
                                         <div className="col-md-1 d-flex flex-row flex-sm-column justify-content-evenly align-items-center">
-                                            <button className="btn btn-warning"><FaEye /></button>
+                                            <a className="btn btn-warning"><FaEye /></a>
                                             <button className="btn btn-primary"><FaEdit /></button>
                                             <button className="btn btn-danger" onClick={() => { deleteContact(e.id) }} ><MdDelete /></button>
                                         </div>
