@@ -38,7 +38,7 @@ const AddContact = ({ Contact, setContact }) => {
                         <div className="card bg-light text-black rounded-4 shadow-lg">
                             <div className="card-header p-3 text-center bg-success text-white rounded-top-4 fw-semibold">
                                 Add Contact Here
-                                <button type="button" class="btn-close float-end" data-bs-dismiss="modal" aria-label="Close"></button>
+                                <button type="button" class="btn-close float-end"  aria-label="Close" data-bs-dismiss="modal"></button>
                             </div>
                             <div className="card-body fw-semibold">
                                 <div className="row">
@@ -77,7 +77,7 @@ const AddContact = ({ Contact, setContact }) => {
                                     </div>
                                 </div>
                                 <div className="text-center mt-3">
-                                    <button onClick={addNewContact} className="btn btn-success text-white rounded-3">Submit</button>
+                                    <button data-bs-dismiss="modal" onClick={addNewContact} className="btn btn-success text-white rounded-3">Submit</button>
                                 </div>
                             </div>
                         </div>
