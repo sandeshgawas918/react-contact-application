@@ -3,21 +3,7 @@ import { MdDelete } from "react-icons/md";
 import { FaEye } from "react-icons/fa";
 import { FaEdit } from "react-icons/fa";
 
-const DisplayCard = ({ search }) => {
-    const [Contact, setContact] = useState([])
-
-    let fetchingFn = useEffect(() => {
-        let fetchData = async () => {
-            let data = await fetch('./data.json')
-            let reqData = await data.json()
-            setContact(reqData)
-        }
-        fetchData()
-    }, [])
-
-    useCallback(() => {
-        fetchingFn()
-    }, [])
+const DisplayCard = ({ search, Contact, setContact }) => {
 
     const deleteContact = (myId) => {
         let newArray = Contact.filter((contact) => {

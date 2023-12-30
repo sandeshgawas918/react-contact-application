@@ -4,27 +4,27 @@
         "name":"Sandesh",
         "email":"sandesh@gmail.com",
         "mobile":9012452378,
-        "img":"https://cdn-icons-png.flaticon.com/512/219/219983.png"
+        "img":"https://cdn-icons-png.flaticon.com/512/4140/4140037.png"
     },
     {
         "id":2,
         "name":"Vivek",
         "email":"vivek@gmail.com",
         "mobile":9013752378,
-        "img":"https://cdn-icons-png.flaticon.com/512/219/219983.png"
-    },
-    {
-        "id":3,
-        "name":"Archit",
-        "email":"archit@gmail.com",
-        "mobile":9512452378,
-        "img":"https://cdn-icons-png.flaticon.com/512/219/219983.png"
+        "img":"https://cdn-icons-png.flaticon.com/512/6141/6141985.png"
     },
     {
         "id":4,
         "name":"Pramod",
         "email":"pramod@gmail.com",
         "mobile":9912432378,
-        "img":"https://cdn-icons-png.flaticon.com/512/219/219983.png"
+        "img":"https://png.pngtree.com/png-clipart/20230927/original/pngtree-doctor-doing-research-in-laboratory-3d-character-illustration-png-image_13000404.png"
+    },
+    {
+        "id":3,
+        "name":"Archit",
+        "email":"archit@gmail.com",
+        "mobile":9512452378,
+        "img":"https://cdn-icons-png.flaticon.com/256/4140/4140061.png"
     }
 ]

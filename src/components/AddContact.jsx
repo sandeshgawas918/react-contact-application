@@ -1,7 +1,7 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { IoIosPersonAdd } from "react-icons/io";
 
-const AddContact = () => {
+const AddContact = ({Contact,setContact}) => {
     let clearContact={
         id:6,
         name:'',
@@ -9,7 +9,21 @@ const AddContact = () => {
         mobile:'',
         img:''
     }
-    
+
+    const [newContact, setnewContact] = useState(clearContact)
+
+    let addNewContact=()=>{
+        let myNewContact={
+            id:6,
+            name:newContact.name,
+            email:newContact.email,
+            mobile:newContact.mobile,
+            img:newContact.img,
+        }
+        setContact([...Contact,myNewContact])
+        console.log('new contact added');
+    }
+
     return (
         <div>
             <button type="button" class="btn btn-success float-end m-4" data-bs-toggle="modal" data-bs-target="#exampleModal">
@@ -30,7 +44,7 @@ const AddContact = () => {
                                         <div className="col-form-label">Name :</div>
                                     </div>
                                     <div className="col-md-8">
-                                        <input type="text" className="form-control" />
+                                        <input value={newContact.name} onChange={(e)=>{setnewContact({...newContact,name:e.target.value})}} type="text" className="form-control" />
                                     </div>
                                 </div>
                                 <div className="row mt-2">
@@ -38,7 +52,7 @@ const AddContact = () => {
                                         <div className="col-form-label">Email : </div>
                                     </div>
                                     <div className="col-md-8">
-                                        <input type="text" className="form-control"
+                                        <input value={newContact.email} onChange={(e)=>{setnewContact({...newContact,email:e.target.value})}} type="text" className="form-control"
                                         />
                                     </div>
                                 </div>
@@ -47,7 +61,7 @@ const AddContact = () => {
                                         <div className="col-form-label">Mobile : </div>
                                     </div>
                                     <div className="col-md-8">
-                                        <input type="text" className="form-control"
+                                        <input value={newContact.mobile} onChange={(e)=>{setnewContact({...newContact,mobile:e.target.value})}} type="text" className="form-control"
                                         />
                                     </div>
                                 </div>
@@ -56,12 +70,12 @@ const AddContact = () => {
                                         <div className="col-form-label">Img : </div>
                                     </div>
                                     <div className="col-md-8">
-                                        <input type="text" className="form-control"
+                                        <input value={newContact.img} onChange={(e)=>{setnewContact({...newContact,img:e.target.value})}} type="text" className="form-control"
                                         />
                                     </div>
                                 </div>
                                 <div className="text-center mt-3">
-                                    <button className="btn btn-success text-white rounded-3">Submit</button>
+                                    <button onClick={addNewContact} className="btn btn-success text-white rounded-3">Submit</button>
                                 </div>
                             </div>
                             {/* </div> */}
