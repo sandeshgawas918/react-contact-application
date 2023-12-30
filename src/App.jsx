@@ -8,6 +8,8 @@ const App = () => {
 
   const [search,setSearch]=useState('')
   const [Contact, setContact] = useState([])
+  const [sort, setsort] = useState('email')
+  const [order, setorder] = useState('asc')
 
   let fetchingFn = useEffect(() => {
       let fetchData = async () => {
@@ -42,13 +44,13 @@ const App = () => {
       <div className="container">
         <div className="row">
           <div className="col-md-6">
-            <Search setSearch={setSearch} searchContact={searchContact}/>
+            <Search setSearch={setSearch} searchContact={searchContact} sort={sort} setsort={setsort} order={order} setorder={setorder} />
           </div>
           <div className="col-md-6">
             <AddContact Contact={Contact} setContact={setContact}  />
           </div>
         </div>
-        <DisplayCard search={search} setSearch={setSearch} Contact={Contact} setContact={setContact}/>
+        <DisplayCard search={search} setSearch={setSearch} Contact={Contact} setContact={setContact} sort={sort} order={order} setorder={setorder}/>
       </div>
     </div>
   )
