@@ -2,14 +2,14 @@
     {
         "id":1,
         "name":"Sandesh",
-        "email":"sandesh@gmail.com",
+        "email":"zandesh@gmail.com",
         "mobile":9012452378,
         "img":"https://cdn-icons-png.flaticon.com/512/4140/4140037.png"
     },
     {
         "id":2,
         "name":"Vivek",
-        "email":"vivek@gmail.com",
+        "email":"bivek@gmail.com",
         "mobile":9013752378,
         "img":"https://cdn-icons-png.flaticon.com/512/6141/6141985.png"
     },
@@ -23,7 +23,7 @@
     {
         "id":3,
         "name":"Archit",
-        "email":"archit@gmail.com",
+        "email":"varchit@gmail.com",
         "mobile":9512452378,
         "img":"https://static-cdn.icons8.com/l/3d/images/1_with_coffee_man_3.webp"
     },
