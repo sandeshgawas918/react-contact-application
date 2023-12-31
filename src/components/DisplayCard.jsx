@@ -43,7 +43,7 @@ const DisplayCard = ({ search, Contact, setContact, sort, order }) => {
                                             </ul>
                                         </div>
                                         <div className="col-md-1 d-flex flex-row flex-sm-column justify-content-evenly align-items-center">
-                                            <Link key={e.id} to={`viewContact/${e.id}`}
+                                            <Link key={e.id} to={`/viewContact/${e.id}`}
                                                 state={
                                                     {
                                                         name: e.name,
@@ -58,7 +58,7 @@ const DisplayCard = ({ search, Contact, setContact, sort, order }) => {
 
 
 
-                                            <Link to={'editContact'} className="btn btn-primary"><FaEdit /></Link>
+                                            <Link to={'/editContact'} className="btn btn-primary"><FaEdit /></Link>
                                             <button className="btn btn-danger" onClick={() => { deleteContact(e.id) }} ><MdDelete /></button>
                                         </div>
                                     </div>
