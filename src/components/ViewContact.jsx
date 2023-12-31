@@ -62,7 +62,7 @@ const ViewContact = () => {
                   </div>
                 </div>
                 <div className="text-center mt-3">
-                  <Link to={'react-contact-application'} className="btn btn-danger text-white rounded-3">Back</Link>
+                  <Link to={'/react-contact-application'} className="btn btn-danger text-white rounded-3">Back</Link>
                 </div>
               </div>
             </div>
