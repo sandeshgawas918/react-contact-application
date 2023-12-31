@@ -9,7 +9,7 @@ import Navbar from './components/Navbar.jsx'
 
 const router = createBrowserRouter([
   {
-    path: "/react-contact-application",
+    path: "/https://sandeshgawas918.github.io/react-contact-application/",
     element: <App />
   },
   {
