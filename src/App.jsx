@@ -12,7 +12,7 @@ const App = () => {
 
   let fetchingFn = useEffect(() => {
       let fetchData = async () => {
-          let data = await fetch('./react-contact-application/data.json')
+          let data = await fetch('./data.json')
           let reqData = await data.json()
           setContact(reqData)
       }
