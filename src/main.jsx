@@ -9,15 +9,15 @@ import Navbar from './components/Navbar.jsx'
 
 const router = createBrowserRouter([
   {
-    path: "react-contact-application/",
+    path: "/https://sandeshgawas918.github.io/react-contact-application/",
     element: <App />
   },
   {
-    path: "/viewContact",
+    path: "viewContact/:contadId",
     element: <ViewContact />
   },
   {
-    path: "/editContact",
+    path: "editContact",
     element: <EditContact />
   }
 ]);
