@@ -4,7 +4,7 @@ import { FaEye } from "react-icons/fa";
 import { FaEdit } from "react-icons/fa";
 import { Link } from 'react-router-dom';
 
-const DisplayCard = ({ search, Contact, setContact,sort,order }) => {
+const DisplayCard = ({ search, Contact, setContact, sort, order }) => {
 
     const deleteContact = (myId) => {
         let newArray = Contact.filter((contact) => {
@@ -17,8 +17,8 @@ const DisplayCard = ({ search, Contact, setContact,sort,order }) => {
         return contact.name.toLowerCase().includes(search.toLowerCase()) ||
             contact.email.toLowerCase().includes(search.toLowerCase()) ||
             contact.mobile.toString().includes(search.toString())
-    }).sort((a,b)=>(
-        order=='asc' ? a[sort].localeCompare(b[sort]) : b[sort].localeCompare(a[sort])
+    }).sort((a, b) => (
+        order == 'asc' ? a[sort].localeCompare(b[sort]) : b[sort].localeCompare(a[sort])
     ))
 
     console.log(filteredArray);
@@ -43,8 +43,22 @@ const DisplayCard = ({ search, Contact, setContact,sort,order }) => {
                                             </ul>
                                         </div>
                                         <div className="col-md-1 d-flex flex-row flex-sm-column justify-content-evenly align-items-center">
-                                            <Link to={'/viewContact'} className="btn btn-warning"><FaEye /></Link>
-                                            <Link to={'/editContact'} className="btn btn-primary"><FaEdit /></Link>
+                                            <Link key={e.id} to={`viewContact/${e.id}`}
+                                                state={
+                                                    {
+                                                        name: e.name,
+                                                        email: e.email,
+                                                        mobile: e.mobile,
+                                                        img: e.img
+                                                    }
+                                                }
+                                                className="btn btn-warning">
+                                                <FaEye />
+                                            </Link>
+
+
+
+                                            <Link to={'editContact'} className="btn btn-primary"><FaEdit /></Link>
                                             <button className="btn btn-danger" onClick={() => { deleteContact(e.id) }} ><MdDelete /></button>
                                         </div>
                                     </div>
