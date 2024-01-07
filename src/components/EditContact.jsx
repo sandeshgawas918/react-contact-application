@@ -6,11 +6,12 @@ const EditContact = () => {
   let { contadId } = useParams();
 
   const location = useLocation();
-  const {Contact,setContact}=location.state || {}
+  // const {Contact,setContact}=location.state || {}
+  const {Contact}=location.state || {}
 
-  console.log(Contact);
+  // console.log(Contact);
 
-  // const [myContact, setmyContact] = useState(Contact)
+  const [myContact, setmyContact] = useState(Contact)
 
   // let updateContact=()=>{
   //   let updatedContact={
@@ -70,7 +71,7 @@ const EditContact = () => {
                   </div>
                 </div>
                 <div className="text-center mt-3">
-                  <Link onClick={updateContact} to={''} className="btn btn-primary text-white rounded-3 mx-2">Submit</Link>
+                  <Link className="btn btn-primary text-white rounded-3 mx-2">Submit</Link>
                   <Link to={'/'} className="btn btn-danger text-white rounded-3 mx-2">Back</Link>
                 </div>
               </div>

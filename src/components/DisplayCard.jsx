@@ -55,7 +55,7 @@ const DisplayCard = ({ search, Contact, setContact, sort, order }) => {
                                             <Link key={e.id} to={`editContact/${e.id}`}
                                                 state={
                                                     {
-                                                        // Contact: Contact,
+                                                        Contact: e,
                                                         // setContact:setContact
                                                         // updateContact:updateContact
                                                     }
