@@ -46,19 +46,23 @@ const DisplayCard = ({ search, Contact, setContact, sort, order }) => {
                                             <Link key={e.id} to={`viewContact/${e.id}`}
                                                 state={
                                                     {
-                                                        name: e.name,
-                                                        email: e.email,
-                                                        mobile: e.mobile,
-                                                        img: e.img
+                                                        contact: e
                                                     }
                                                 }
                                                 className="btn btn-warning">
                                                 <FaEye />
                                             </Link>
-
-
-
-                                            <Link to={'editContact'} className="btn btn-primary"><FaEdit /></Link>
+                                            <Link key={e.id} to={`editContact/${e.id}`}
+                                                state={
+                                                    {
+                                                        // Contact: Contact,
+                                                        // setContact:setContact
+                                                        // updateContact:updateContact
+                                                    }
+                                                }
+                                                className="btn btn-primary">
+                                                <FaEdit />
+                                            </Link>
                                             <button className="btn btn-danger" onClick={() => { deleteContact(e.id) }} ><MdDelete /></button>
                                         </div>
                                     </div>

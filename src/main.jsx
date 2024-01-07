@@ -17,7 +17,7 @@ const router = createBrowserRouter([
     element: <ViewContact />
   },
   {
-    path: "editContact",
+    path: "editContact/:contactId",
     element: <EditContact />
   }
 ]);
