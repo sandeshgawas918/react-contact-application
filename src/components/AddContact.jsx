@@ -28,17 +28,17 @@ const AddContact = ({ Contact, setContact }) => {
 
     return (
         <div>
-            <button type="button" class="btn btn-success float-end m-4" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            <button type="button" className="btn btn-success float-end m-4" data-bs-toggle="modal" data-bs-target="#exampleModal">
                 <IoIosPersonAdd className='mb-1 h4' /> Add Contact
             </button>
 
-            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog">
-                    <div class="modal-content rounded-4">
+            <div className="modal fade" id="exampleModal" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div className="modal-dialog">
+                    <div className="modal-content rounded-4">
                         <div className="card bg-light text-black rounded-4 shadow-lg">
                             <div className="card-header p-3 text-center bg-success text-white rounded-top-4 fw-semibold">
                                 Add Contact Here
-                                <button type="button" class="btn-close float-end"  aria-label="Close" data-bs-dismiss="modal"></button>
+                                <button type="button" className="btn-close float-end"  aria-label="Close" data-bs-dismiss="modal"></button>
                             </div>
                             <div className="card-body fw-semibold">
                                 <div className="row">
