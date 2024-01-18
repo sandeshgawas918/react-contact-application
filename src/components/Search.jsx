@@ -4,7 +4,7 @@ import { GiCheckMark } from "react-icons/gi";
 const Search = ({ setSearch, searchContact, setsort, sort, setorder, order }) => {
   return (
     <div className='m-3'>
-      <div class="input-group mt-1">
+      <div className="input-group mt-1">
         <input type="text"
           onChange={(e) => { searchContact(e.target.value) }}
           className="form-control rounded-start-pill border-1 border-success"

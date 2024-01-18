@@ -6,6 +6,7 @@ import './index.css'
 import ViewContact from './components/ViewContact.jsx'
 import EditContact from './components/EditContact.jsx'
 import Navbar from './components/Navbar.jsx'
+import { UserContextProvider } from './context/UserContextProvider.jsx'
 
 const router = createBrowserRouter([
   {
@@ -24,7 +25,9 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-  <Navbar/>
-    <RouterProvider router={router} />
+    <UserContextProvider>
+      <Navbar />
+      <RouterProvider router={router} />
+    </UserContextProvider>
   </React.StrictMode>
 );
