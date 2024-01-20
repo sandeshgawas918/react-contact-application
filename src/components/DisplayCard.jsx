@@ -1,10 +1,13 @@
-import React, { useCallback, useEffect, useState } from 'react'
+import React, { useCallback, useContext, useEffect, useState } from 'react'
 import { MdDelete } from "react-icons/md";
 import { FaEye } from "react-icons/fa";
 import { FaEdit } from "react-icons/fa";
 import { Link } from 'react-router-dom';
+import { myContext } from '../context/UserContextProvider';
 
-const DisplayCard = ({ search, Contact, setContact, sort, order }) => {
+const DisplayCard = ({ search, sort, order }) => {
+
+    let {Contact,setContact}=useContext(myContext)
 
     const deleteContact = (myId) => {
         let newArray = Contact.filter((contact) => {
@@ -23,7 +26,7 @@ const DisplayCard = ({ search, Contact, setContact, sort, order }) => {
 
     return (
         <div>
-            <pre>{JSON.stringify(Contact)}</pre>
+            {/* <pre>{JSON.stringify(Contact)}</pre> */}
             <div className="row">
                 {
                     filteredArray.map((e,index) => (

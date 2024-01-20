@@ -7,6 +7,7 @@ import ViewContact from './components/ViewContact.jsx'
 import EditContact from './components/EditContact.jsx'
 import Navbar from './components/Navbar.jsx'
 import { UserContextProvider } from './context/UserContextProvider.jsx'
+import DisplayCard from './components/DisplayCard.jsx'
 
 const router = createBrowserRouter([
   {
@@ -20,6 +21,10 @@ const router = createBrowserRouter([
   {
     path: "editContact/:contactId",
     element: <EditContact />
+  },
+  {
+    path: "displayContact",
+    element: <DisplayCard/>
   }
 ]);
 

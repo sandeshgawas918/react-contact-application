@@ -16,7 +16,7 @@ const EditContact = () => {
     setcurrContact(selectedcontact)
     console.log('---------');
     console.log(Contact);
-  }, [selectedcontact,Contact])
+  }, [selectedcontact])
 
   let updateContact = (e) => {
     e.preventDefault()
@@ -25,20 +25,14 @@ const EditContact = () => {
       e.id == contactId ? currContact : e
     ))
     setContact(updatedContact)
-
-    // setContact((prevContact)=>(
-    //   prevContact.map((con)=>(
-    //     con.id == contactId ? currContact : con
-    //   ))
-    // ))
-    // console.log(Contact);
+    
     navigate('/')
   }
 
   return (
     <div>
-      <pre>{currContact && JSON.stringify(currContact)}</pre>
-      <pre>{Contact && JSON.stringify(Contact)}</pre>
+      {/* <pre>{currContact && JSON.stringify(currContact)}</pre>
+      <pre>{Contact && JSON.stringify(Contact)}</pre> */}
       {
         currContact &&
         <div className="container">

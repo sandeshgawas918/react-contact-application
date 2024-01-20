@@ -1,9 +1,15 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { FaReact } from "react-icons/fa";
+import { myContext } from '../context/UserContextProvider';
 
 const Navbar = () => {
+
+    // let { Contact, setContact } = useContext(myContext)
+
     return (
         <div>
+        {/* <pre>{JSON.stringify(Contact)}</pre>
+        <pre>{JSON.stringify(isMounted)}</pre> */}
             <nav className='bg-black text-white p-4'>
                 <h4><span className='text-primary'><FaReact className=' mb-1' /> React</span> - Contact Application</h4>
             </nav>
