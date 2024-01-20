@@ -6,9 +6,12 @@ const myContext = createContext();
 const UserContextProvider = ({ children }) => {
 
   const [Contact, setContact] = useState([])
+  // const [isMounted, setIsMounted] = useState(true);
+  const [initialDataLoaded, setInitialDataLoaded] = useState(false);
+  // isMounted,setIsMounted,
 
   return (
-    <myContext.Provider value={{ Contact, setContact }}>
+    <myContext.Provider value={{ Contact, setContact,initialDataLoaded,setInitialDataLoaded }}>
       {children}
     </myContext.Provider>
   )

@@ -80,6 +80,9 @@ const AddContact = ({ Contact, setContact }) => {
                                     <button data-bs-dismiss="modal" onClick={addNewContact} className="btn btn-success text-white rounded-3">Submit</button>
                                 </div>
                             </div>
+                            <div className="card-footer">
+                                <img src={newContact.img} className='img img-fluid' alt="" />
+                            </div>
                         </div>
                     </div>
                 </div>

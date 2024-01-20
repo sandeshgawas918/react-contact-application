@@ -7,27 +7,28 @@ import { myContext } from './context/UserContextProvider';
 const App = () => {
 
   let { Contact, setContact } = useContext(myContext)
+  let {initialDataLoaded,setInitialDataLoaded}=useContext(myContext)
 
   const [search, setSearch] = useState('')
   const [sort, setsort] = useState('email')
   const [order, setorder] = useState('asc')
 
   let fetchData = async () => {
-    let data = await fetch('./data.json')
-    let reqData = await data.json()
-    setContact(reqData)
-  }
+    let data = await fetch('./data.json');
+    let reqData = await data.json();
+    setContact(reqData);
+    setInitialDataLoaded(true);
+  };
 
   useEffect(() => {
-    fetchData()
-  }, [])
-
+    if (!initialDataLoaded) {
+      fetchData();
+    }
+  }, [initialDataLoaded, setContact]);
 
   let searchContact = (value) => {
     setSearch(value)
   }
-
-
 
   return (
     <div className=' z-0'>
@@ -41,7 +42,7 @@ const App = () => {
             <AddContact Contact={Contact} setContact={setContact} />
           </div>
         </div>
-        <DisplayCard search={search} setSearch={setSearch} Contact={Contact} setContact={setContact} sort={sort} order={order} setorder={setorder} />
+        <DisplayCard search={search} setSearch={setSearch} sort={sort} order={order} setorder={setorder} />
       </div>
     </div>
   )
