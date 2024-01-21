@@ -8,11 +8,13 @@ import EditContact from './components/EditContact.jsx'
 import Navbar from './components/Navbar.jsx'
 import { UserContextProvider } from './context/UserContextProvider.jsx'
 import DisplayCard from './components/DisplayCard.jsx'
+import Login from './components/Login.jsx'
+import Register from './components/Register.jsx'
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <App />
+    element: <Login />
   },
   {
     path: "viewContact/:contadId",
@@ -25,6 +27,14 @@ const router = createBrowserRouter([
   {
     path: "displayContact",
     element: <DisplayCard/>
+  },
+  {
+    path:"register",
+    element:<Register/>
+  },
+  {
+    path:'contacts',
+    element:<App/>
   }
 ]);
 

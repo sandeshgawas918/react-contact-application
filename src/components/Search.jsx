@@ -3,6 +3,7 @@ import { GiCheckMark } from "react-icons/gi";
 
 const Search = ({ setSearch, searchContact, setsort, sort, setorder, order }) => {
   return (
+    
     <div className='m-3'>
       <div className="input-group mt-1">
         <input type="text"

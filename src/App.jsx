@@ -6,12 +6,15 @@ import { myContext } from './context/UserContextProvider';
 
 const App = () => {
 
-  let { Contact, setContact } = useContext(myContext)
-  let {initialDataLoaded,setInitialDataLoaded}=useContext(myContext)
+  let { Contact, setContact,check, setcheck } = useContext(myContext)
+  let { initialDataLoaded, setInitialDataLoaded } = useContext(myContext)
+
+  let loggedUser=JSON.parse(localStorage.getItem('user'))
 
   const [search, setSearch] = useState('')
   const [sort, setsort] = useState('email')
   const [order, setorder] = useState('asc')
+
 
   let fetchData = async () => {
     let data = await fetch('./data.json');
@@ -35,6 +38,11 @@ const App = () => {
       {/* <pre>{JSON.stringify(search)}</pre> */}
       <div className="container">
         <div className="row">
+          <div className="row mt-3">
+            <div>
+            <button className="btn btn-info rounded-3 float-end">Logged in as {(loggedUser && check) ? loggedUser.name : <span className=' fw-semibold'>GUEST</span>}</button>
+            </div>
+          </div>
           <div className="col-md-6">
             <Search setSearch={setSearch} searchContact={searchContact} sort={sort} setsort={setsort} order={order} setorder={setorder} />
           </div>
