@@ -7,7 +7,7 @@ import { myContext } from '../context/UserContextProvider';
 
 const DisplayCard = ({ search, sort, order }) => {
 
-    let {Contact,setContact}=useContext(myContext)
+    let { Contact, setContact, check, setcheck } = useContext(myContext)
 
     const deleteContact = (myId) => {
         let newArray = Contact.filter((contact) => {
@@ -29,7 +29,7 @@ const DisplayCard = ({ search, sort, order }) => {
             {/* <pre>{JSON.stringify(Contact)}</pre> */}
             <div className="row">
                 {
-                    filteredArray.map((e,index) => (
+                    filteredArray.map((e, index) => (
                         <div className="col-md-6" key={e.id}>
                             <div className="card border-0">
                                 <div className="card-header border-3 shadow-sm m-4 p-4 rounded-3">
@@ -45,7 +45,7 @@ const DisplayCard = ({ search, sort, order }) => {
                                             </ul>
                                         </div>
                                         <div className="col-md-1 d-flex flex-row flex-sm-column justify-content-evenly align-items-center">
-                                            <Link to={`viewContact/${e.id}`}
+                                            <Link to={`/viewContact/${e.id}`}
                                                 state={
                                                     {
                                                         contact: e
@@ -54,18 +54,21 @@ const DisplayCard = ({ search, sort, order }) => {
                                                 className="btn btn-warning">
                                                 <FaEye />
                                             </Link>
-
-                                            <Link to={`editContact/${e.id}`}
-                                                state={
-                                                    {
-                                                        selectedcontact: e
-                                                    }
-                                                }
-                                                className="btn btn-primary">
-                                                <FaEdit />
-                                            </Link>
-
-                                            <button className="btn btn-danger" onClick={() => { deleteContact(e.id) }} ><MdDelete /></button>
+                                            {
+                                                check &&
+                                                <>
+                                                    <Link to={`/editContact/${e.id}`}
+                                                        state={
+                                                            {
+                                                                selectedcontact: e
+                                                            }
+                                                        }
+                                                        className="btn btn-primary">
+                                                        <FaEdit />
+                                                    </Link>
+                                                    <button className="btn btn-danger" onClick={() => { deleteContact(e.id) }} ><MdDelete /></button>
+                                                </>
+                                            }
                                         </div>
                                     </div>
                                 </div>

@@ -3,11 +3,15 @@ import DisplayCard from './components/DisplayCard'
 import Search from './components/Search';
 import AddContact from './components/AddContact';
 import { myContext } from './context/UserContextProvider';
+import { MdLogout } from "react-icons/md";
+import { Link, useNavigate } from 'react-router-dom';
 
 const App = () => {
 
   let { Contact, setContact,check, setcheck } = useContext(myContext)
   let { initialDataLoaded, setInitialDataLoaded } = useContext(myContext)
+
+  let navigate=useNavigate()
 
   let loggedUser=JSON.parse(localStorage.getItem('user'))
 
@@ -33,6 +37,12 @@ const App = () => {
     setSearch(value)
   }
 
+  let handleLogout=(e)=>{
+    e.preventDefault()
+    setcheck(false)
+    navigate('/')
+  }
+
   return (
     <div className=' z-0'>
       {/* <pre>{JSON.stringify(search)}</pre> */}
@@ -40,7 +50,7 @@ const App = () => {
         <div className="row">
           <div className="row mt-3">
             <div>
-            <button className="btn btn-info rounded-3 float-end">Logged in as {(loggedUser && check) ? loggedUser.name : <span className=' fw-semibold'>GUEST</span>}</button>
+            <button onClick={handleLogout} className="btn btn-info rounded-3 float-end">Logged in as {(loggedUser && check) ? loggedUser.name : <span className=' fw-semibold'>GUEST</span>} <MdLogout className=' text-danger fw-bold h5 m-1' /> </button>
             </div>
           </div>
           <div className="col-md-6">

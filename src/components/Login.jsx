@@ -19,16 +19,18 @@ const Login = () => {
             if (loggedUser.username === loginUser.username && loggedUser.password === loginUser.password) {
                 setcheck(true)
                 navigate('contacts')
+                setloginUser({ username: '', password: '' })
             }
             else {
-                setcheck(true)
+                setcheck(false)
                 alert('invalid username / password')
                 setloginUser({ username: '', password: '' })
             }
         }
         else{
-            setcheck(true)
+            setcheck(false)
             alert('User not created. Please register to login or Login as Guest')
+            setloginUser({ username: '', password: '' })
         }
     }
 

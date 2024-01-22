@@ -26,7 +26,7 @@ const EditContact = () => {
     ))
     setContact(updatedContact)
     
-    navigate('/')
+    navigate('/contacts')
   }
 
   return (
@@ -80,7 +80,7 @@ const EditContact = () => {
                   </div>
                   <div className="text-center mt-3">
                     <button onClick={updateContact} className="btn btn-primary text-white rounded-3 mx-2">Submit</button>
-                    <Link to={'/'} className="btn btn-danger text-white rounded-3 mx-2">Back</Link>
+                    <Link to={'/contacts'} className="btn btn-danger text-white rounded-3 mx-2">Back</Link>
                   </div>
                 </div>
               </div>
